@@ -22,7 +22,11 @@ class StartCalculator
     def instruction
       instruction = [
         "Please input your order as following format",
-        'Example: 10 IMG 15 FLAC 13 VID',
+        'Example:',
+        '10 IMG',
+        '10 IMG 15 FLAC',
+        '10 IMG 15 FLAC 13 VID',
+        '=========================',
         "'QUIT' or 'EXIT' to exit."
       ]
       instruction.join("\n")

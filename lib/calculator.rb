@@ -5,13 +5,18 @@ require_relative './orders/video'
 
 class Calculator
   class << self
+    include Utility
+
     def run(input)
       order_commands = input.split(' ')
 
-      Utility.validate(order_commands)
+      # Validate user input order commands
+      validate(order_commands)
 
+      # Format user input orders
       orders = Hash[*order_commands]
 
+      # Return calculated results
       run_results(orders)
     end
 

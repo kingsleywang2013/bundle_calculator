@@ -20,7 +20,7 @@ module Orders
     private
 
     def calculate_result_counts(amount)
-      bundle_result = calculate_bundle(amount)
+      bundle_result = calculate_bundles(amount)
 
       counts = Hash.new(0)
       bundle_result.each { |result| counts[result] += 1 }
@@ -28,7 +28,7 @@ module Orders
       counts
     end
 
-    def calculate_bundle(amount)
+    def calculate_bundles(amount)
       if amount == 0
         raise(
           Errors::OrderAmountError,
