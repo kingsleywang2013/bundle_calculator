@@ -14,7 +14,7 @@ A CLI calculator for bundle packages.
 
 4. Change to the app directory:
 
-    ```cd toy_robot_simulator```
+    ```cd bundle_calculator```
 
 5. Install dependencies:
 
