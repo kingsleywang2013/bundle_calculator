@@ -1,5 +1,3 @@
-require_relative 'errors'
-
 module Utility
   # Define a constant for all valid commands for simulator
   FORMATS = ['VID', 'IMG', 'FLAC'].freeze
@@ -7,7 +5,7 @@ module Utility
   def validate(order_commands)
     if order_commands.length % 2 != 0
       raise(
-        Errors::CommandFormatError,
+        StandardError,
         "Command Format Error - An example input: 10 IMG 15 FLAC 13 VID"
       )
     end
@@ -30,7 +28,7 @@ module Utility
   def validate_order_format(order_command)
     unless FORMATS.include?(order_command)
       raise(
-        Errors::OrderFormatError,
+        StandardError,
         "#{order_command} is not a valid order format, please choose one in #{FORMATS}"
       )
     end
@@ -39,7 +37,7 @@ module Utility
   def validate_order_amount(order_command)
     unless is_integer?(order_command)
       raise(
-        Errors::OrderAmountError,
+        StandardError,
         "#{order_command} is not a valid integer"
       )
     end

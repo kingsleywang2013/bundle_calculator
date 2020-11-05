@@ -1,5 +1,3 @@
-require_relative '../errors'
-
 module Orders
   module Calculator
     def display_results(amount)
@@ -31,7 +29,7 @@ module Orders
     def calculate_bundles(amount)
       if amount == 0
         raise(
-          Errors::OrderAmountError,
+          StandardError,
           "Amount should be greater than 0"
         )
       end
@@ -56,7 +54,7 @@ module Orders
 
       if optimal_calculate[amount].empty?
         raise(
-          Errors::OrderBundleError,
+          StandardError,
           "Sorry, we have no matched bundles for #{format} with your order amount #{amount}"
         )
       else
@@ -65,3 +63,4 @@ module Orders
     end
   end
 end
+
